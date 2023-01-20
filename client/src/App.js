@@ -11,13 +11,13 @@ import { getPrivateRoute, getPublicRoute } from './routes';
 import Router from './routes/Router';
 import { KeepLoggedIn } from './redux/userAuth/actions';
 import { LOADER_END } from './redux/loader/actionTypes';
-import { notFound } from './routes/publicRoute';
+import { notFound, unProtectedRoutes } from './routes/publicRoute';
 
 
  
 
 function App() {
-  const [allRoutes, setAllRoutes] = useState([...notFound])
+  const [allRoutes, setAllRoutes] = useState([...notFound, ...unProtectedRoutes])
   const dispatch = useDispatch()
   const loader = useSelector(state => state.loader)
 

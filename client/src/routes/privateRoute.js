@@ -1,12 +1,7 @@
-import HomePage from "../pages/HomePage/HomePage";
 import ProfilePage from "../pages/ProfilePage/ProfilePage";
 
 
-export const privateRoute = [
-     {
-        path:'/',
-        element:<HomePage/>
-     },  
+export const privateRoute = [  
      {
         path:'/profile',
         element:<ProfilePage/>

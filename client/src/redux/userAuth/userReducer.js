@@ -6,6 +6,7 @@ import {
 
 const initialState = {
     user: {},
+    login:false,
     message: ''
 };
 
@@ -23,12 +24,14 @@ export const userReducer = (state = initialState, {
         case USER_LOGIN: 
             return {
                 user: payload,
+                login:true,
                 message: 'User Login Successfull.'
             }  
             
         case USER_LOG_OUT:   
              return {
                 user: {},
+                login:false,
                 message: 'User Log out Successfull.' 
              }
             default:

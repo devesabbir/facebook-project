@@ -2,6 +2,7 @@
 import Auth from "../pages/Auth/Auth";
 import Forgot from "../pages/Forgot/Forgot";
 import ForgotPassOtp from "../pages/ForgotPasswordOtp/ForgotPassOtp";
+import HomePage from "../pages/HomePage/HomePage";
 import ResetPassword from "../pages/ResetPassword/ResetPassword";
 import TokenVerify from "../pages/TokenVerify/TokenVerify";
 import UserFindPage from "../pages/UserFindPage/UserFindPage";
@@ -42,7 +43,12 @@ export const publicRoute = [
     
 ]
 
-
+export const unProtectedRoutes = [
+   {
+    path:'/',
+    element:<HomePage/>
+   }
+]
 
 export const notFound = [
   {
