@@ -3,7 +3,7 @@ import ProfilePage from "../pages/ProfilePage/ProfilePage";
 
 export const privateRoute = [  
      {
-        path:'/profile',
+        path:'/profile/:id',
         element:<ProfilePage/>
      },
      {

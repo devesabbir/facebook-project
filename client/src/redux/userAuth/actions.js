@@ -114,7 +114,7 @@ export const LogOutAction = (Cookies, navigate) => (dispatch) => {
    dispatch({type:LOADER_START})
    Cookies.remove('ffbtoken')
    Cookies.remove('access_token')
-   navigate('/login')
+   navigate('/')
    dispatch({ type:USER_LOG_OUT})
    dispatch({type:LOADER_END})
 }

@@ -1,19 +1,23 @@
 import React from 'react'
+import { useState } from 'react'
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 const PostBody = () => {
+  const [show, setShow] = useState(false)
+  const user = useSelector( state => state.user.user )
     
   return (
     <div className="fb-home-body">
     <div className="fb-home-body-sidebar">
       <ul>
         <li>
-          <a href="#">
+          <Link to={'/profile/' + user._id }>
             <div className="body-icon">
               <img src="./assets/images/user.png" alt="" />
             </div>
             <span>Asraful Haque</span>
-          </a>
+          </Link>
         </li>
         <li>
           <Link to={'friends'}>
@@ -93,7 +97,15 @@ const PostBody = () => {
               </div>
             </div>
             <div className="post-menu">
-              <div className="post-dropdown-menu">
+              <button onClick={() => setShow(!show)} > 
+                <svg fill="currentColor" viewBox="0 0 20 20" width="1em" height="1em" className="x1lliihq x1k90msu x2h7rmj x1qfuztq xcza8v6 x1qx5ct2 xw4jnvo">
+                  <g fillRule="evenodd" transform="translate(-446 -350)">
+                    <path d="M458 360a2 2 0 1 1-4 0 2 2 0 0 1 4 0m6 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0m-12 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0" />
+                  </g>
+                </svg>
+              </button>
+              {
+                show && <div onMouseLeave={() => setShow(!show)} className="post-dropdown-menu">
                 <ul>
                   <li>
                     <a href="#">
@@ -153,13 +165,7 @@ const PostBody = () => {
                   </li>
                 </ul>
               </div>
-              <button>
-                <svg fill="currentColor" viewBox="0 0 20 20" width="1em" height="1em" className="x1lliihq x1k90msu x2h7rmj x1qfuztq xcza8v6 x1qx5ct2 xw4jnvo">
-                  <g fillRule="evenodd" transform="translate(-446 -350)">
-                    <path d="M458 360a2 2 0 1 1-4 0 2 2 0 0 1 4 0m6 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0m-12 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0" />
-                  </g>
-                </svg>
-              </button>
+              }
             </div>
           </div>
           <div className="post-body">

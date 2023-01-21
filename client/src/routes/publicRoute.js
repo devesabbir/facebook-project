@@ -47,12 +47,9 @@ export const unProtectedRoutes = [
    {
     path:'/',
     element:<HomePage/>
-   }
-]
-
-export const notFound = [
-  {
-      path:'*',
-      element:'Not Found!'
-  },
+   },
+   {
+    path:'*',
+    element:'Not Found!'
+  }
 ]

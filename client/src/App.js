@@ -11,13 +11,13 @@ import { getPrivateRoute, getPublicRoute } from './routes';
 import Router from './routes/Router';
 import { KeepLoggedIn } from './redux/userAuth/actions';
 import { LOADER_END } from './redux/loader/actionTypes';
-import { notFound, unProtectedRoutes } from './routes/publicRoute';
+import {  unProtectedRoutes } from './routes/publicRoute';
 
 
  
 
 function App() {
-  const [allRoutes, setAllRoutes] = useState([...notFound, ...unProtectedRoutes])
+  const [allRoutes, setAllRoutes] = useState([...unProtectedRoutes])
   const dispatch = useDispatch()
   const loader = useSelector(state => state.loader)
 
@@ -26,7 +26,6 @@ function App() {
   useEffect(() => {
      let token = Cookies.get('ffbtoken') ? Cookies.get('ffbtoken') : null
      dispatch(KeepLoggedIn(Cookies,token))
-   
   },[dispatch])
 
 
